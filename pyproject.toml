@@ -3,7 +3,7 @@ requires = [ "poetry>=0.12",]
 build-backend = "poetry.masonry.api"
 
 [tool.poetry]
-name = "{{ project_name }}""
+name = "{{ project_name }}"
 repository = "{{ project_repo }}"
 version = "{{ version }}"
 description = "{{ project_description }}"
