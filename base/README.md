@@ -1,94 +1,32 @@
 
 # {{ project_name }}
 
-[![PyPI](https://img.shields.io/pypi/v/vaping.svg?maxAge=60)](https://pypi.python.org/pypi/vaping)
-[![PyPI](https://img.shields.io/pypi/pyversions/vaping.svg?maxAge=600)](https://pypi.python.org/pypi/vaping)
-[![Tests](https://github.com/20c/vaping/workflows/tests/badge.svg)](https://github.com/20c/vaping)
-![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/20c/vaping)
-[![Codecov](https://img.shields.io/codecov/c/github/20c/vaping/master.svg)](https://codecov.io/github/20c/vaping)
+[![PyPI](https://img.shields.io/pypi/v/{{ project_name }}.svg?maxAge=60)](https://pypi.python.org/pypi/{{ project_name }})
+[![PyPI](https://img.shields.io/pypi/pyversions/{{ project_name }}.svg?maxAge=600)](https://pypi.python.org/pypi/{{ project_name }})
+[![Tests](https://github.com/20c/{{ project_name }}/workflows/tests/badge.svg)](https://github.com/20c/{{ project_name }})
+![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/20c/{{ project_name }})
+[![Codecov](https://img.shields.io/codecov/c/github/20c/{{ project_name }}/master.svg)](https://codecov.io/github/20c/{{ project_name }})
 
-
-vaping is a healthy alternative to smokeping!
-
-![Vaping](https://raw.githubusercontent.com/20c/vaping/master/docs/img/vaping.png)
+{{ project_name }} is a healthy alternative to smokeping!
 
 ## Introduction
 
-Vaping was started after years of frustration from dealing with perl and
-environment management for smokeping. It's a simple python daemon which uses
-green threads to poll for input and send output through plugins.
-
-It has a standalone mode to direvapingy serve realtime graphs, or can use ZeroMQ
-to distribute.
-
-
-## Installation
-
 ```sh
-pip install vaping
+pip install {{ project_name }}
 ```
-
-Note, you will need a compiler and python development libraries for some components.
-
-On CentOS/RHEL:
-
-```sh
-yum install gcc python-devel
-```
-
-
-## Usage
-
-```
-Usage: vaping [OPTIONS] COMMAND [ARGS]...
-
-  Vaping
-
-Options:
-  --version    Show the version and exit.
-  --quiet      no output at all
-  --verbose    enable more verbose output
-  --home TEXT  specify the home directory, by default will check in order:
-               $VAPING_HOME, ./.vaping, ~/.config/vaping
-  --debug      enable extra debug output
-  --help       Show this message and exit.
-
-Commands:
-  start    start a vaping process
-  stop     stop a vaping process
-  restart  restart a vaping process
-```
-
-
-### start
-
-Starts a vaping process, by default will fork into the background unless
-`--debug` or `--no-fork` is passed.
-
-It adds options:
-
-```
-  -d, --no-fork  do not fork into background
-```
-
-
-### stop
-
-Stops a vaping process identified by `$VAPING_HOME/vaping.pid`
-
 
 ## Documentation
 
 Documentation is created with mkdocs and available here:
 
-**stable**: <http://vaping.readthedocs.io/en/stable/>
+**stable**: <http://{{ project_name }}.readthedocs.io/en/stable/>
 
-**latest**: <http://vaping.readthedocs.io/en/latest/>
+**latest**: <http://{{ project_name }}.readthedocs.io/en/latest/>
 
 
 ## Changes
 
-The current change log is available at <https://github.com/20c/vaping/blob/master/CHANGELOG.md>
+The current change log is available at <https://github.com/20c/{{ project_name }}/blob/master/CHANGELOG.md>
 
 
 ## License
