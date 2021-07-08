@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "{{ project_name }}"
-repository = "{{ project_repo }}"
 version = "{{ version }}"
 description = "{{ project_description }}"
+repository = "{{ project_repo }}"
+readme = "README.md"
 authors = [ "20C <code@20c.com>",]
 license = "{{ project_license }}"
 classifiers = [
@@ -12,6 +13,10 @@ classifiers = [
   "Programming Language :: Python :: 3.7", 
   "Programming Language :: Python :: 3.8", 
   "Programming Language :: Python :: 3.9",
+]
+
+packages = [
+    { include = "{{ project_name }}", from = "src" },
 ]
 
 [tool.poetry.dependencies]
