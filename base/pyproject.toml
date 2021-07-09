@@ -2,8 +2,8 @@
 name = "{{ project_name }}"
 version = "{{ version }}"
 description = "{{ project_description }}"
-repository = "{{ project_repo }}"
 readme = "README.md"
+repository = "{{ project_repo }}"
 authors = [ "20C <code@20c.com>",]
 license = "{{ project_license }}"
 classifiers = [
