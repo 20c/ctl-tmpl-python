@@ -8,8 +8,9 @@ if [[ -z "${service}" ]]; then
 fi
 
 COMPOSE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+PROJECT_NAME=$(basename $(git rev-parse --show-toplevel))
 
-service_id=$(docker-compose -f $COMPOSE_DIR/docker-compose.yml ps -q $service)
+service_id=$(docker-compose -p $PROJECT_NAME -f $COMPOSE_DIR/docker-compose.yml ps -q $service)
 
 if [[ -z "${service_id}" ]]; then
   echo error finding service id
