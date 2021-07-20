@@ -4,7 +4,7 @@
 [![PyPI](https://img.shields.io/pypi/v/{{ project_name }}.svg?maxAge=60)](https://pypi.python.org/pypi/{{ project_name }})
 [![PyPI](https://img.shields.io/pypi/pyversions/{{ project_name }}.svg?maxAge=600)](https://pypi.python.org/pypi/{{ project_name }})
 [![Tests](https://github.com/20c/{{ project_name }}/workflows/tests/badge.svg)](https://github.com/20c/{{ project_name }})
-![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/20c/{{ project_name }})
+[![LGTM Grade](https://img.shields.io/lgtm/grade/python/github/20c/{{ project_name }})](https://lgtm.com/projects/g/20c/{{ project_name }}/alerts/)
 [![Codecov](https://img.shields.io/codecov/c/github/20c/{{ project_name }}/master.svg)](https://codecov.io/github/20c/{{ project_name }})
 
 {{ project_name }} is a healthy alternative to smokeping!
