@@ -1,0 +1,12 @@
+project_name: "my-project"
+
+package:
+  repository: https://github.com/me/my_repo
+  description: my project
+  installable: false
+  documentation: false
+  copyright: 2021
+  license: Apache-2
+  status: 4 - Beta
+  version: 0.1.0
+
