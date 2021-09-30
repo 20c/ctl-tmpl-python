@@ -1,3 +1,4 @@
+{% raw %}
 name: tests
 
 on: [push, pull_request]
@@ -84,3 +85,5 @@ jobs:
         with:
           file: ./coverage.xml
           fail_ci_if_error: true
+
+{% endraw %}
