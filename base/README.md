@@ -34,7 +34,7 @@ The current change log is available at <https://github.com/20c/{{ project_name }
 {% if package.license == "apache-2" %}
 ## License
 
-Copyright {{ copyright %} 20C, LLC
+Copyright {{ copyright }} 20C, LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this software except in compliance with the License.
