@@ -31,7 +31,7 @@ Documentation is created with mkdocs and available here:
 
 The current change log is available at <https://github.com/20c/{{ project_name }}/blob/master/CHANGELOG.md>
 
-{% if package.license == "apache-2" %}
+{% if package.license == "Apache-2" %}
 ## License
 
 Copyright {{ copyright }} 20C, LLC
