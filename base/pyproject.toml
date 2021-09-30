@@ -3,12 +3,12 @@ name = "{{ project_name }}"
 version = "{{ package.version }}"
 description = "{{ package.description }}"
 readme = "README.md"
-repository = "{{ package.repoistory }}"
+repository = "{{ package.repository }}"
 authors = [ "20C <code@20c.com>",]
 license = "{{ package.license }}"
 classifiers = [
   "Topic :: Software Development", 
-  "Development Status :: {{ package.status }}",_
+  "Development Status :: {{ package.status }}",
   "License :: OSI Approved :: Apache Software License", 
   "Programming Language :: Python :: 3.6", 
   "Programming Language :: Python :: 3.7", 
