@@ -1,7 +1,11 @@
 ctl:
+
+  permissions:
+    - namespace: ctl
+      permission: crud
+
   plugins:
-
-
+  
     # git repo for copying setup for python package
 
     - name: git_python_template
