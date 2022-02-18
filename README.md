@@ -5,6 +5,6 @@ copy `tmplvars.example.yaml` to `Ctl/tmplvars.yaml` in your target repository an
 Then in your target repostiroy
 
 ```
-pip install ctl tmpl jinja2 
+pip install ctl tmpl jinja2 pyyaml
 ctl sync_python
 ```
