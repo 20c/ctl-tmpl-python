@@ -41,7 +41,7 @@ pyupgrade = "^2.19.4"
 # docs
 markdown = "*"
 markdown-include = ">=0.5,<1"
-mkdocs = "^1"
+mkdocs = "^1.2.3"
 
 # ctl
 ctl = "^1"
