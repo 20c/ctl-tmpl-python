@@ -21,7 +21,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 
 [tool.poetry.dev-dependencies]
 # testing
@@ -38,6 +38,7 @@ flake8 = ">=3.8"
 mypy = ">=0.950"
 pre-commit = ">=2.13"
 pyupgrade = ">=2.19"
+ruff = ">=0.1"
 
 # docs
 markdown = "*"
@@ -48,8 +49,7 @@ mkdocs = "^1.2.3"
 ctl = ">=1"
 jinja2 = ">=2"
 tmpl = ">=1"
-# v4 released 2022-03-31
-twine = "^3.3.0"
+twine = ">=3"
 
 [tool.poetry.plugins."markdown.extensions"]
 pymdgen = "pymdgen.md:Extension"
