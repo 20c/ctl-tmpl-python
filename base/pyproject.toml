@@ -31,10 +31,7 @@ pytest-django = ">=3.8"
 pytest-cov = "*"
 
 # linting
-# bandit = ">=1.6.2"
-black = ">=20"
-isort = ">=5.7"
-flake8 = ">=3.8"
+bandit = ">=1.6.2"
 mypy = ">=0.950"
 pre-commit = ">=2.13"
 pyupgrade = ">=2.19"
@@ -43,7 +40,7 @@ ruff = ">=0.1"
 # docs
 markdown = "*"
 markdown-include = ">=0.5,<1"
-mkdocs = "^1.2.3"
+mkdocs = ">=1.2.3"
 
 # ctl
 ctl = ">=1"
@@ -55,10 +52,9 @@ twine = ">=3"
 pymdgen = "pymdgen.md:Extension"
 
 [build-system]
-requires = [ "poetry>=0.12",]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
 
-[tool.isort]
-profile = "black"
-multi_line_output = 3
-
+[tool.ruff.lint]
+# Enable the isort rules.
+extend-select = ["I"]
