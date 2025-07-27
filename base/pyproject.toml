@@ -1,60 +1,125 @@
-[tool.poetry]
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
 name = "{{ project_name }}"
-version = "{{ package.version }}"
+dynamic = ["version"]
 description = "{{ package.description }}"
 readme = "README.md"
-repository = "{{ package.repository }}"
-authors = [ "20C <code@20c.com>",]
 license = "{{ package.license }}"
+requires-python = ">=3.9"
+authors = [
+    {name = "20C", email = "code@20c.com"}
+]
 classifiers = [
-  "Topic :: Software Development",
-  "Development Status :: {{ package.status }}",
-  "License :: OSI Approved :: Apache Software License",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development",
+    "Development Status :: {{ package.status }}",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.urls]
+Repository = "{{ package.repository }}"
+
+[project.optional-dependencies]
+dev = [
+    # testing
+    "coverage>=5",
+    "pytest>=6",
+    "pytest-django>=3.8",
+    "pytest-cov",
+    
+    # linting
+    "bandit>=1.6.2",
+    "mypy>=0.950",
+    "pre-commit>=2.13",
+    "ruff>=0.1",
+    
+    # docs
+    "markdown",
+    "markdown-include>=0.5,<1",
+    "mkdocs>=1.2.3",
+    
+    # ctl
+    "ctl>=1",
+    "jinja2>=2",
+    "tmpl>=1",
+    "twine>=3",
 ]
 
-packages = [
-    { include = "{{ project_name }}", from = "src" },
+[tool.uv]
+dev-dependencies = [
+    # testing
+    "coverage>=5",
+    "pytest>=6",
+    "pytest-django>=3.8",
+    "pytest-cov",
+    
+    # linting
+    "bandit>=1.6.2",
+    "mypy>=0.950",
+    "pre-commit>=2.13",
+    "ruff>=0.1",
+    
+    # docs
+    "markdown",
+    "markdown-include>=0.5,<1",
+    "mkdocs>=1.2.3",
+    
+    # ctl
+    "ctl>=1",
+    "jinja2>=2",
+    "tmpl>=1",
+    "twine>=3",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.8"
-
-[tool.poetry.dev-dependencies]
-# testing
-coverage = ">=5"
-pytest = ">=6"
-pytest-django = ">=3.8"
-pytest-cov = "*"
-
-# linting
-bandit = ">=1.6.2"
-mypy = ">=0.950"
-pre-commit = ">=2.13"
-pyupgrade = ">=2.19"
-ruff = ">=0.1"
-
-# docs
-markdown = "*"
-markdown-include = ">=0.5,<1"
-mkdocs = ">=1.2.3"
-
-# ctl
-ctl = ">=1"
-jinja2 = ">=2"
-tmpl = ">=1"
-twine = ">=3"
-
-[tool.poetry.plugins."markdown.extensions"]
+[project.entry-points."markdown.extensions"]
 pymdgen = "pymdgen.md:Extension"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.hatch.version]
+path = "src/{{ project_name }}/__init__.py"
 
-[tool.ruff.lint]
-# Enable the isort rules.
-extend-select = ["I"]
+[tool.ruff]
+extend-select = [
+    "UP",  # pyupgrade
+    "I",   # isort
+    "F",   # Pyflakes
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "C90", # mccabe complexity
+    "N",   # pep8-naming
+]
+line-length = 88
+target-version = "py39"
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint.isort]
+known-first-party = ["{{ project_name }}"]
+force-single-line = false
+split-on-trailing-comma = true
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+"tests/**/*" = ["S101"]   # Allow assert statements in tests
